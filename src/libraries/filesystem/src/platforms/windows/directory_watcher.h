@@ -15,9 +15,9 @@
 #include <Windows.h>
 
 #include <m/cast/to.h>
+#include <m/chrono/chrono.h>
 #include <m/filesystem/filesystem.h>
 #include <m/threadpool/threadpool.h>
-#include <m/utility/chrono.h>
 #include <m/utility/pointers.h>
 
 namespace m::filesystem_impl::platform_specific
@@ -245,13 +245,13 @@ namespace m::filesystem_impl::platform_specific
         on_directory_probe_timer();
 
         void
-        enqueue_async_read_directory_changes(utc_time_point issue_time);
+        enqueue_async_read_directory_changes(time_point issue_time);
 
         void
-        invalidate_watcher(utc_time_point issue_time);
+        invalidate_watcher(time_point issue_time);
 
         void
-        recheck_watcher(utc_time_point issue_time);
+        recheck_watcher(time_point issue_time);
 
         static void
         read_directory_changes_ex_callback(PTP_CALLBACK_INSTANCE CallbackInstance,
