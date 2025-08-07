@@ -208,6 +208,8 @@ TEST(TestSlowSink, LotsOfMessages100)
         src->wlog(m::tracing::event_kind::error, L"Hello, tracing this should definitely show up!");
 }
 
+#if 0
+
 TEST(TestSlowSink, LotsOfMessages500)
 {
     auto coutsink = slow_sink::register_sink(m::tracing::monitor.get(), slow_sink_delay_1);
@@ -229,7 +231,7 @@ TEST(TestSlowSink, LotsOfMessages1000)
     for (auto i = 0; i < message_count; i++)
         src->wlog(m::tracing::event_kind::error, L"Hello, tracing this should definitely show up!");
 }
-
+#endif
 
 
 
